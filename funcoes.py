@@ -361,3 +361,18 @@ def pularCNPJ(nomeNotas, CNPJS):
     print('\nBloco de notas lido\n')
 
 
+def encontrar_ocorrencia(string, letra, ocorrencia):
+    start = 0  # Posição inicial para busca
+    for _ in range(ocorrencia):
+        try:
+            # Encontra a próxima ocorrência a partir de 'start'
+            index = string.index(letra, start)
+            # Atualiza 'start' para procurar após a posição encontrada
+            start = index + 1
+        except ValueError:
+            # Retorna -1 se a letra não for encontrada
+            return -1
+    return index
+
+
+
